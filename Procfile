@@ -1,1 +1,1 @@
-python3 app
+web: ython3 app
