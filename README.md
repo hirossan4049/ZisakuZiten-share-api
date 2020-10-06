@@ -11,5 +11,8 @@ uvicorn app.main:app
 
 
 ## Docs
-run app -> `http://localhost:8000/docs` !
+
+1. run app
+2. open `http://localhost:8000/docs` 
+
 so easy!

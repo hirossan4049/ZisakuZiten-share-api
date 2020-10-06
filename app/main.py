@@ -1,6 +1,7 @@
 import uuid
 import threading
 import time
+import schedule
 
 from fastapi import Body, FastAPI
 from pydantic import BaseModel
@@ -12,17 +13,13 @@ app = FastAPI()
 db = Db()
 
 
+schedule.every(1).hours.do(db.old_data_delete)
 
 def old_deleter():
 	t = threading.currentThread()
 	while getattr(t, "do_run", True):
-		db.old_data_delete()
-		for _ in range(3600):
-			if not getattr(t, "do_run", True):
-				break
-			else:
-				time.sleep(1)
-		# time.sleep(3600)
+		schedule.run_pending()
+		time.sleep(1)
 
 class SuperUser(BaseModel):
 	id: str
@@ -32,7 +29,6 @@ class Ziten(BaseModel):
 	title: str
 	content: str
 	updateTime: str
-
 
 class Group(BaseModel):
     title: str
