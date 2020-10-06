@@ -7,7 +7,10 @@ from fastapi import Body, FastAPI
 from pydantic import BaseModel
 from typing import List
 
-from db import Db
+try:
+	from db import Db
+except ImportError:
+	from app.db import Db
 
 app = FastAPI()
 db = Db()
