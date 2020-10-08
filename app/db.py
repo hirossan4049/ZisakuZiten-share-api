@@ -14,7 +14,10 @@ class Db():
 
 	def get(self,id):
 		que = Query()
-		data = self.db.search(que.id == id)[0]
+		try:
+			data = self.db.search(que.id == id)[0]
+		except IndexError:
+			return []
 		return data
 
 	def delete(self,id,passwd) -> bool:
