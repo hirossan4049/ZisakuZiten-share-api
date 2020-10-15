@@ -1,5 +1,7 @@
 # Simple ZisakuZiten Group share api
 
+version 1.0.1 Alpha
+
 ## Usage
 ```bash
 python3 app
