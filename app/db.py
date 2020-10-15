@@ -24,7 +24,6 @@ class Db():
 		que = Query()
 		try:
 			group = self.db.search(que.id == id)[0]
-			print(group)
 			if group["passwd"] == passwd:
 				self.db.remove(que.id == id)
 				return True
