@@ -1,6 +1,6 @@
 # Simple ZisakuZiten Group share api
 
-version 1.0.1 Alphaa
+version 1.0.1 Alpha
 
 ## Usage
 ```bash
