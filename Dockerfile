@@ -9,7 +9,7 @@ RUN apk add --no-cache build-base \
  && apk del build-base
 
 COPY . app
-EXPOSE 8000
+EXPOSE 8585
 # FastAPIを8000ポートで待機
 #CMD ["uvicorn", "main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
 #CMD ["ls","app/app"]
