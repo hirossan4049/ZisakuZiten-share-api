@@ -118,3 +118,12 @@ async def share_group(id, user_agent: Optional[str] = Header(None)):
 		# return respons
 		return HTMLResponse(content=share_response_html(id, data["data"]), status_code=200)
 		# return "who are you?"
+
+
+@app.get("/test/")
+async def test():
+	return "test!!"
+
+
+
+
