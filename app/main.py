@@ -122,7 +122,7 @@ async def share_group(id, user_agent: Optional[str] = Header(None)):
 
 @app.get("/test/")
 async def test():
-	return "unko!!!!"
+	return "test!!"
 
 
 
