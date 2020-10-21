@@ -96,7 +96,7 @@ async def get_group(id: str, user_agent: Optional[str] = Header(None)):
 	return {"res": "ok", "data": data["data"]}
 
 
-@app.post("/delete/")
+@app.delete("/delete/")
 async def delete_group(su: SuperUser):
 	# debuger()
 	res = db.delete(su.id, su.passwd)
@@ -118,11 +118,6 @@ async def share_group(id, user_agent: Optional[str] = Header(None)):
 		# return respons
 		return HTMLResponse(content=share_response_html(id, data["data"]), status_code=200)
 		# return "who are you?"
-
-
-@app.get("/test/")
-async def test():
-	return "unko!!!!!"
 
 
 
